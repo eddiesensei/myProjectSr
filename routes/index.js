@@ -3,7 +3,11 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
      console.log('Successful index launch');
-     res.render('views/index')
+     res.render('index')
+})
+
+router.post('/', (req, res) => {
+     
 })
 
 module.exports = router

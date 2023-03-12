@@ -1,9 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/login', (req, res) => {
-    console.log('Successful login page')
+router.get('/', (req, res) => {
+    console.log('Successful login launch')
     res.render('login');
+})
+
+router.post('/', (req, res) => {
+     
 })
 
 module.exports = router
