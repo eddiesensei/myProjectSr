@@ -10,7 +10,7 @@ const indexRouter= require('./routes/index')
 const loginRouter= require('./routes/login')
 const registerRouter= require('./routes/register')
 
-//db stuff---------------------------------------------------------------------------
+//mongodb stuff---------------------------------------------------------------------------
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true
 })
