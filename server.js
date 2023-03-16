@@ -9,6 +9,7 @@ const path = require('path')
 const indexRouter= require('./routes/index')
 const loginRouter= require('./routes/login')
 const registerRouter= require('./routes/register')
+const dotenv = require('dotenv')
 
 //mongodb stuff---------------------------------------------------------------------------
 const mongoose = require('mongoose')
