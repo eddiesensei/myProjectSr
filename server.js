@@ -31,7 +31,6 @@ app.use(express.urlencoded({ extended: false}))
 app.use('/', indexRouter);
 app.use('/login', loginRouter)
 app.use('/register', registerRouter)
-//app.use('/users', userRouter)
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
 
 

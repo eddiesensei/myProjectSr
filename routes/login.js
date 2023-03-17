@@ -9,23 +9,20 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
+ 
+   try{
+        const check = await User.findOne({ email: req.body.email })
 
-    try{
-            const check = await User.findOne({ email: req.body.email })
-
-            if(check.password === req.body.password){
-                res.render('index')
-            }
-            else{
-                res.send('Incorrect Email or Password')
-            }
-
-
+        if(check.password === req.body.password){
+            res.render('index')
+        }
+        else{
+            res.send('Incorrect details')
+        }
     }catch (e){
-            console.log(e)
-            res.send('Incorrect Email or Password')
+        console.log(e)
+        res.send('Incorrect Email or Password')
     }
-
 })
 
 module.exports = router
