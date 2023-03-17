@@ -5,10 +5,12 @@ if(process.env.NODE_ENV !== 'production'){
 const express = require('express')
 const app = express()
 const path = require('path')
+const bodyParser = require('body-parser')
 //const expressLayouts = require('express-ejs-layouts')
 const indexRouter= require('./routes/index')
 const loginRouter= require('./routes/login')
-const userRouter= require('./routes/users')
+const registerRouter = require('./routes/register')
+//const userRouter= require('./routes/register')
 
 //   mongodb stuff--------------------------------------------------------------------
 const mongoose = require('mongoose')
@@ -16,7 +18,7 @@ mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true
 })
 const db = mongoose.connection
 db.on('error', error => console.error(error))
-db.once('open', () => console.log('Connected to mongoose DB'))
+db.once('open', () => console.log('Connected to mongo DB'))
 //------------------------------------------------------------------------------------
 
 app.set('view engine', 'ejs');
@@ -28,5 +30,9 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.urlencoded({ extended: false}))
 app.use('/', indexRouter);
 app.use('/login', loginRouter)
-app.use('/users', userRouter)
+app.use('/register', registerRouter)
+//app.use('/users', userRouter)
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
+
+
 app.listen(process.env.PORT || 3000);
