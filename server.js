@@ -8,9 +8,9 @@ const path = require('path')
 //const expressLayouts = require('express-ejs-layouts')
 const indexRouter= require('./routes/index')
 const loginRouter= require('./routes/login')
-const registerRouter= require('./routes/register')
+const userRouter= require('./routes/users')
 
-//mongodb stuff---------------------------------------------------------------------------
+//   mongodb stuff--------------------------------------------------------------------
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true
 })
@@ -28,6 +28,5 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.urlencoded({ extended: false}))
 app.use('/', indexRouter);
 app.use('/login', loginRouter)
-app.use('/register', registerRouter)
-
+app.use('/users', userRouter)
 app.listen(process.env.PORT || 3000);
