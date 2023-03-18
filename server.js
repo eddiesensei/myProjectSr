@@ -6,7 +6,6 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const bodyParser = require('body-parser')
-//const expressLayouts = require('express-ejs-layouts')
 const indexRouter= require('./routes/index')
 const loginRouter= require('./routes/login')
 const registerRouter = require('./routes/register')
@@ -22,10 +21,7 @@ db.once('open', () => console.log('Connected to mongo DB'))
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
-//app.set('layout', 'layouts/layout');
 
-//app.use(expressLayouts)
-//app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false}))
 app.use('/', indexRouter);
 app.use('/login', loginRouter)
