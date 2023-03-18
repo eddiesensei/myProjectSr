@@ -10,7 +10,6 @@ const bodyParser = require('body-parser')
 const indexRouter= require('./routes/index')
 const loginRouter= require('./routes/login')
 const registerRouter = require('./routes/register')
-//const userRouter= require('./routes/register')
 
 //   mongodb stuff--------------------------------------------------------------------
 const mongoose = require('mongoose')
@@ -32,6 +31,5 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter)
 app.use('/register', registerRouter)
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
-
 
 app.listen(process.env.PORT || 3000);
