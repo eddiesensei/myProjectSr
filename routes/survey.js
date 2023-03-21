@@ -11,17 +11,19 @@ router.get('/', (req, res) => {
 // leave survey/review route
 router.post('/', async(req, res) => {
     try{
+
         const data={
-             value: req.body.value
+            service: req.body.service
         }
 
-        await Survey.insertMany([data])
+        await Survey.insertMany[(data)]
 
         res.render('index')
 
-   }catch (e){
+    }catch (e){
+
         console.log(e)
-   }
+    }
 })
 
 module.exports = router
