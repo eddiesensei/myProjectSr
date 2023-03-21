@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+</head>
+<body>
+    <h2>Feedback Survey</h2>
+    <div>
+        Please select the service provider you signed up for:<br>
+    </div>
+    <form action="/survey" action="POST" id="service">
+        <select name="service" id="service"  form="service" required>
+            <option value="" disabled selected hidden>Type to search </option>
+            <option value="JSEB Access to Capital">JSEB Access to Capital</option>
+            <option value="Better Business Bureau of Northeast Florida">Better Business Bureau of Northeast Florida</option>
+            <option value="Jacksonville Women's Business Center">Jacksonville Women's Business Center</option>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/index">Go back home</a>
+</body>
+</html>
