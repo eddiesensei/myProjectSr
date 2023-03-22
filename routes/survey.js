@@ -11,13 +11,14 @@ router.get('/', (req, res) => {
 // leave survey/review route
 router.post('/', async(req, res) => {
 
+    console.log('post route reached')
     try{
 
         const data={
             service: req.body.service
         }
 
-        await Survey.insertMany[(data)]
+        await Survey.insertMany([data])
 
         res.render('index')
 
