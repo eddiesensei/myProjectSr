@@ -29,5 +29,3 @@ router.post('/', async(req, res) => {
 })
 
 module.exports = router
-
-//onsubmit="window.alert('Survey submitted')"

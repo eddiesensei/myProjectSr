@@ -11,7 +11,9 @@ router.get('/', (req, res) => {
 // leave survey/review route
 router.post('/', async(req, res) => {
 
-    console.log('post route reached')
+    //console.log function in order to confirm route entrance
+    console.log('survey post route reached')
+
     try{
 
         const data={
