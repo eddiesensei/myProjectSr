@@ -11,7 +11,7 @@ const loginRouter= require('./routes/login')
 const registerRouter = require('./routes/register')
 const surveyRouter = require('./routes/survey')
 
-//   mongodb stuff--------------------------------------------------------------------
+// mongodb stuff--------------------------------------------------------------------
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true})
 const db = mongoose.connection
@@ -28,7 +28,7 @@ app.use('/login', loginRouter)
 app.use('/register', registerRouter)
 app.use('/survey', surveyRouter)
 
-// syntax to llimit how much data is being pushed to mongo db
+// syntax to limit how much data is being pushed to mongo db
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
 
 app.listen(process.env.PORT || 3000);
