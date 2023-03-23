@@ -31,4 +31,4 @@ app.use('/survey', surveyRouter)
 // syntax to limit how much data is being pushed to mongo db
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000)
