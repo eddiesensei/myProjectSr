@@ -32,3 +32,4 @@ app.use('/survey', surveyRouter)
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
 
 app.listen(process.env.PORT || 3000)
+//auto
