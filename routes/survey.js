@@ -17,7 +17,10 @@ router.post('/', async(req, res) => {
     try{
 
         const data={
-            service: req.body.service
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            service: req.body.service,
+            rating: req.body.rating,
         }
 
         await Survey.insertMany([data])

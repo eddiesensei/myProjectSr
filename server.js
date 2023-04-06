@@ -10,6 +10,7 @@ const indexRouter= require('./routes/index')
 const loginRouter= require('./routes/login')
 const registerRouter = require('./routes/register')
 const surveyRouter = require('./routes/survey')
+const manageReportsRouter = require('./routes/manageReports')
 
 // mongodb stuff--------------------------------------------------------------------
 const mongoose = require('mongoose')
@@ -27,6 +28,7 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter)
 app.use('/register', registerRouter)
 app.use('/survey', surveyRouter)
+app.use('/manageReports', manageReportsRouter)
 
 // syntax to limit how much data is being pushed to mongo db
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
