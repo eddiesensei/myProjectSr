@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     console.log('Successful manage reports launch')
     
     await Survey.find({}, function(err, surveys) {
-        res.render('managereports', {
+        res.render('manageReports', {
             surveysList: surveys
         })
     })
